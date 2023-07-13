@@ -18,25 +18,39 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
+      // Added html webpack plugin
       new HtmlWebpackPlugin({
         template: './src/index.html',
         filename: 'index.html',
       }),
 
-      new InjectManifest(),
+      // Added workbox plugin
+      new InjectManifest(
+        {
+          swSrc: './src-sw.js',
+          swDest: 'sw.js',
+        }
+      ),
 
+      // Added manifest plugin
       new WebpackPwaManifest({
-        name: 'Jate',
-        short_name: 'Jate',
+        // name of the generated manifest file
+        name: 'Just Another Text Editor',
+        short_name: 'JATE',
         description: 'A simple note taking app',
         background_color: '#ffffff',
         theme_color: '#ffffff',
+        // path to the icon
         start_url: '/',
         publicPath: '/',
+        // configure the icons
         icons: [
           {
+            // path to the generated icon file
             src: path.resolve('src/images/logo.png'),
+            // multiple icon generation (different sizes)
             sizes: [96, 128, 192, 256, 384, 512],
+            // destination folder
             destination: path.join('src', 'icons'),
           },
         ],
