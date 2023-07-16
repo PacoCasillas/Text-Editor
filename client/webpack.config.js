@@ -20,7 +20,7 @@ module.exports = () => {
     plugins: [
       // Added html webpack plugin
       new HtmlWebpackPlugin({
-        template: './src/index.html',
+        template: './index.html',
         filename: 'index.html',
       }),
 
@@ -60,7 +60,7 @@ module.exports = () => {
     module: {
       rules: [
         {
-          test: /\.css$/i,
+          test: /\.css$/,
           use: ['style-loader', 'css-loader'],
         },
         {
@@ -69,8 +69,11 @@ module.exports = () => {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel-preset-env'],
-              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
+              presets: ['@babel/preset-env'],
+              plugins: [
+                        '@babel/plugin-proposal-object-rest-spread',
+                        '@babel/transform-runtime',
+                      ],
             },
           },
         },
