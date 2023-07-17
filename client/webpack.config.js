@@ -28,7 +28,7 @@ module.exports = () => {
       new InjectManifest(
         {
           swSrc: './src-sw.js',
-          swDest: 'sw.js',
+          swDest: 'src-sw.js',
         }
       ),
 
@@ -36,10 +36,10 @@ module.exports = () => {
       new WebpackPwaManifest({
         // name of the generated manifest file
         name: 'Just Another Text Editor',
-        short_name: 'JATE',
-        description: 'A simple note taking app',
-        background_color: '#ffffff',
-        theme_color: '#ffffff',
+        short_name: 'J.A.T.E',
+        description: 'Takes notes with JavaScript syntax highlighting!',
+        background_color: '#225ca3',
+        theme_color: '#225ca3',
         // path to the icon
         start_url: '/',
         publicPath: '/',
@@ -51,7 +51,7 @@ module.exports = () => {
             // multiple icon generation (different sizes)
             sizes: [96, 128, 192, 256, 384, 512],
             // destination folder
-            destination: path.join('src', 'icons'),
+            destination: path.join('assets', 'icons'),
           },
         ],
       }),

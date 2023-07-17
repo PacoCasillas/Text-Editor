@@ -20,8 +20,6 @@ butInstall.addEventListener('click', async () => {
     }
     // show the install prompt
     promptEvent.prompt();
-    // wait for the user to respond to the prompt
-    const result = await promptEvent.userChoice;
     // hide the install button
     butInstall.setAttribute('hidden', true);
     // clear the deferred prompt
@@ -32,4 +30,5 @@ butInstall.addEventListener('click', async () => {
 window.addEventListener('appinstalled', (event) => {
     // log the installation
     console.log('Jate was installed.', event);
+    window.deferredPrompt = null;
 });
