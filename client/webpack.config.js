@@ -34,6 +34,8 @@ module.exports = () => {
 
       // Added manifest plugin
       new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
         // name of the generated manifest file
         name: 'Just Another Text Editor',
         short_name: 'J.A.T.E',
