@@ -23,6 +23,18 @@ In order to use this application, you will want to clone this repository and its
 
 The following images will take you through the steps on how to use this application
 
+This is what it looks like when opened on a browser
+
+![](./README-pictures/text-editor-example.png)
+
+There is an option to open the application on its own window if you click on the icon on the right side of the url
+
+![](./README-pictures/text-editor-download.png)
+
+Lastly once opened that way, it will look more like a native application
+
+![](./README-pictures/text-editor-downloaded.png)
+
 
 ## License
 
